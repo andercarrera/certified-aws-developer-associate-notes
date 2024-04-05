@@ -16,9 +16,9 @@
 - CodeCommit Security
     - Interactions are done using git
     - Authentication with Git
-        - SSH Keys: AWS Users can configure SSH keys in their IAM Console
-        - HTTPS: Done through AWS CLI Authentication helper or generate HTTPS credentials
-        - MFA: Multi-Factor Authentication
+        - **Git Credentials:** A static user name and password pair for HTTPS connections. These are recommended for most scenarios. 
+        - **SSH Keys:** A locally generated public-private key pair for SSH connections. 
+        - **AWS Access Keys:** These can be used with the AWS CLI’s credential helper for HTTPS connections.
     - Authorization with Git
         - IAM Policies manage user / roles rights to the repositories
     - Encryption

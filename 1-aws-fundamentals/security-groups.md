@@ -17,3 +17,8 @@ They regulate:
 * Authorized IP ranges - IPv4 and IPv6
 * Control of inbound network
 * Control of outbound network
+
+### KMS (Key Management Service)
+* How it works:
+  * Stores the Customer Master Key (CMK).
+  * When clients send data to KMS, it encrypts the data and returns the encrypted result.

@@ -63,3 +63,5 @@
 - You can run CodeBuild locally on your desktop (after installing Docker) - For this, leverage the CodeBuild Agent
 - https://docs.aws.amazon.com/codebuild/latest/userguide/use-codebuild-agent.html
   
+### Exam notes:
+- CodeBuild timeouts are used to prevent build running long
