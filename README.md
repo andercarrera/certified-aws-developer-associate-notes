@@ -48,6 +48,7 @@
   - ECS: Elastic Container Service
   - Elastic Container Registry
   - Fargate
+- [Other failures](other_failures.md)
 
 - [Exam Preparation](#exam-preparation)
 
