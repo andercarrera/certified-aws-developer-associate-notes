@@ -111,7 +111,7 @@
 - If we exceed our RCU or WCU we get **ProvisionedThroughputExceededException**
 - Reasons:
   - Hot keys
-  - Hot partition
+  - Hot partition --> inbalanced data access
   - Very large items
 - Solutions:
   - Exponential back-off

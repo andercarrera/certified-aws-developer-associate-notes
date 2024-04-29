@@ -44,7 +44,7 @@
   - [Step Functions](3-aws-serverless/stepfunctions.md)
   - [AppSync](3-aws-serverless/appsync.md)
 
-- Docker based AWS services
+- 4-Docker based AWS services
   - ECS: Elastic Container Service
   - Elastic Container Registry
   - Fargate
