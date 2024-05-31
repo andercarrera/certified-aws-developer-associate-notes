@@ -48,20 +48,23 @@ The same way RDS is to get managed Relational Databases, ElastiCache is to get m
 
 #### Caching Implementation
 
-- Lazy Loading / Cache-Aside / Lazy Population
-  - Pros
-    - Only requested data is cached (the cache isn’t filled up with unused data)
-    - Node failures are not fatal (just increased latency to warm the cache)
-  - Cons
-    - Cache miss penalty that results in 3 round trips, noticeable delay for that request
-    - Stale data: data can be updated in the database and outdated in the cache
+Lazy Loading / Cache-Aside / Lazy Population (Only loads data to the cache when necessary)
+
+- Pros
+  - Only requested data is cached (the cache isn’t filled up with unused data)
+  - Node failures are not fatal (just increased latency to warm the cache)
+- Cons
+  - Cache miss penalty that results in 3 round trips, noticeable delay for that request
+  - Stale data: data can be updated in the database and outdated in the cache
 
 Write Through – Add or Update cache when database is updated
 
 - Pros:
+
   - Data in cache is never stale, reads are quick
   - Write penalty vs Read penalty (each write requires 2 calls)
 - Cons:
+
   - Missing Data until it is added / updated in the DB. Mitigation is to implement Lazy Loading strategy as well
   - Cache churn – a lot of the data will never be read
 

@@ -51,8 +51,7 @@
   are causing order processing to take too long. The application processes orders using Amazon SQS queues. The
   ApproximateNumberOfMessagesVisible metric spikes at very high values throughout the day which triggers the CloudWatch
   alarm. Other ECS metrics for the API containers are well within limits.
-  As a Developer Associate, which of the following will you recommend for improving performance while keeping costs low?
-  **
+  As a Developer Associate, which of the following will you recommend for improving performance while keeping costs low?**
     * Use backlog per instance metric with target tracking scaling policy - _If you use a target tracking scaling policy
       based on a custom Amazon SQS queue metric, dynamic scaling can adjust to the demand curve of your application more
       effectively.
@@ -81,3 +80,25 @@
       cluster for you. You can specify task placement strategies and constraints that allow you to run tasks in the
       configuration you choose, such as spread out across Availability Zones. It is also possible to integrate with
       custom or third-party schedulers._~~
+* **As an AWS Certified Developer Associate, you are writing a CloudFormation template in YAML. The template consists of an EC2 instance creation and one RDS resource. Once your resources are created you would like to output the connection endpoint for the RDS database.
+Which intrinsic function returns the value needed?**:
+  * `GetAtt` - _The intrinsic function GetAtt returns the value of an attribute from a resource in the template. For example, to get the endpoint of an RDS database, you can use the GetAtt function to return the endpoint attribute of the RDS resource._
+  * ~~`Ref` - _The intrinsic function Ref returns the value of the specified parameter or resource._~~
+  * ~~`Fn::Sub` - _The intrinsic function Fn::Sub substitutes variables in an input string with values that you specify._~~
+* **As a developer associate, can you identify the key characteristics of the strongly consistent data model followed by S3? (Select two)**:
+  * A process deletes an existing object and immediately tries to read it. Amazon S3 will not return any data as the object has been deleted
+    * _Amazon S3 provides strong read-after-write consistency for PUTs and DELETEs of objects in your Amazon S3 bucket in all AWS Regions. This applies to both writes to new objects as well as PUTs that overwrite existing objects and DELETEs._
+  * If you delete a bucket and immediately list all buckets, the deleted bucket might still appear in the list
+    * _Bucket configurations have an eventual consistency model. If you delete a bucket and immediately list all buckets, the deleted bucket might still appear in the list._
+* **A company uses microservices-based infrastructure to process the API calls from clients, perform request filtering and cache requests using the AWS API Gateway. Users report receiving 501 error code and you have been contacted to find out what is failing. Which service will you choose to help you troubleshoot?**:
+  * Use X-Ray service: _Troubleshoot always X RAY_
+* **The development team at an IT company uses CloudFormation to manage its AWS infrastructure. The team has created a network stack containing a VPC with subnets and a web application stack with EC2 instances and an RDS instance. The team wants to reference the VPC created in the network stack into its web application stack. As a Developer Associate, which of the following solutions would you recommend for the given use-case?**:
+  * Create a cross-stack reference and use the Export output field to flag the value of VPC from the network stack. Then use `Fn::ImportValue` intrinsic function to import the value of VPC into the web application stack
+* **A company stores confidential data on an Amazon Simple Storage Service (S3) bucket. New regulatory guidelines require that files be stored with server-side encryption. The encryption used must be Advanced Encryption Standard (AES-256) and the company does not want to manage S3 encryption keys. Which of the following options should you use?**
+  * Use SSE-S3: _SSE-S3 encrypts your objects with AES-256 encryption keys that are managed by Amazon S3. There is no additional charge for using SSE-S3._ 
+* **An organization with high data volume workloads have successfully moved to DynamoDB after having many issues with traditional database systems. However, a few months into production, DynamoDB tables are consistently recording high latency. As a Developer Associate, which of the following would you suggest to reduce the latency? (Select two)**
+  * Use eventually consistent reads in place of strongly consistent reads whenever possible - _Eventually consistent reads are less expensive than strongly consistent reads. If your application can tolerate reading data that might not be consistent, you can use eventually consistent reads to reduce latency._
+  * Consider using Global tables if your application is accessed by globally distributed users - _Global tables replicate your Amazon DynamoDB tables automatically across your choice of AWS regions. Global tables provide a fully managed solution for deploying a multi-region, multi-master database, without having to build and maintain your own replication solution._
+* **You are a developer working at a cloud company that embraces serverless. You have performed your initial deployment and would like to work towards adding API Gateway stages and associate them with existing deployments. Your stages will include prod, test, and dev and will need to match a Lambda function variant that can be updated over time. Which of the following features must you add to achieve this? (select two)**
+  * Lambda Aliases: _Lambda aliases are a feature that allows you to point to a specific version of a Lambda function. This is useful when you want to work with different versions of your Lambda function in different environments, such as dev, test, and prod._
+  * Stage Variables: 
